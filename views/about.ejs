@@ -7,8 +7,7 @@
                     <div class="breadcrumb__content">
                         <h1 class="breadcrumb__title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
                             About Us</h1>
-                        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.4s"><a
-                                href="index.html">Home</a>
+                        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.4s"><a href="/">Home</a>
                             <span>About Us</span>
                         </p>
                     </div>
@@ -54,8 +53,8 @@
                                     <span>One Stop <br>Business Solution</span>
                                 </li>
                             </ul>
-                            <a href="price.html" class="cxu-btn-round wow animate__animated animate__fadeInUp"
-                                data-wow-delay="0.6s">READ MORE</a>
+                            <a href="/contact" class="cxu-btn-round wow animate__animated animate__fadeInUp"
+                                data-wow-delay="0.6s">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -71,6 +70,41 @@
     </section>
     <!-- Why Choose area end -->
 
+    <!-- Feature area start -->
+    <section class="feature__area pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                    <div class="feature__item wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                        <img src="assets/imgs/feature/1.png" alt="Icon" class="feature__icon">
+                        <h2 class="feature__text">Rapidly Scalable team (Up/Down)</h2>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                    <div class="feature__item wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                        <img src="assets/imgs/feature/9.png" alt="Icon" class="feature__icon">
+                        <h2 class="feature__text">Processes set by seasoned professionals</h2>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                    <div class="feature__item wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                        <img src="assets/imgs/feature/3.png" alt="Icon" class="feature__icon">
+                        <h2 class="feature__text">Core leaders focussing on business scale-up</h2>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                    <div class="feature__item wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
+                        <img src="assets/imgs/feature/4.png" alt="Icon" class="feature__icon">
+                        <h2 class="feature__text">Techno Savvy work process</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature area end -->
+
 
     <!-- Counter area start -->
     <style scoped>
@@ -80,7 +114,7 @@
             }
         }
     </style>
-    <section class="counter__area-2 pt-130 pb-130">
+    <section class="counter__area-2 pt-100 pb-100">
         <div class="container">
             <div class="counter__inner-2">
                 <div class="row">
@@ -139,16 +173,56 @@
             width: 25px;
             height: 25px;
             font-weight: 700;
+            color: var(--white);
+            font-family: "Font Awesome 6 Free";
+            transition: all 0.3s;
+        }
+
+        .service__item-2-odd h3::before {
+            position: absolute;
+            content: "\f058";
+            left: 0;
+            width: 25px;
+            height: 25px;
+            font-weight: 700;
             color: var(--primary);
             font-family: "Font Awesome 6 Free";
             transition: all 0.3s;
         }
 
-        .service__item-2:hover h3::before {
+        /* .service__item-2:hover h3::before {
+            color: var(--white);
+        } */
+
+        .service__item-2 {
+            background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+            background-image: linear-gradient(to right, var(--secondary), var(--primary));
             color: var(--white);
         }
+
+        .service__item-2 .service__title {
+            color: var(--white);
+        }
+
+        .service__item-2 .service__btm-2 p {
+            color: var(--white);
+        }
+
+        .service__item-2-odd {
+            background-image: -webkit-gradient(linear, left top, right top, from(var(--white)), to(var(--white)));
+            background-image: linear-gradient(to right, var(--white), var(--white));
+            color: var(--white);
+        }
+
+        .service__item-2-odd .service__title {
+            color: var(--black-3);
+        }
+
+        .service__item-2-odd .service__btm-2 p {
+            color: var(--gray);
+        }
     </style>
-    <section class="service__area-2 pt-130">
+    <section class="service__area-2 pt-100">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
@@ -176,7 +250,8 @@
                 </div>
 
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
-                    <div class="service__item-2 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <div class="service__item-2 service__item-2-odd wow animate__animated animate__fadeInUp"
+                        data-wow-delay="0.3s">
                         <div class="">
                             <h3 class="service__title ps-4">Smooth Transition</h3>
                         </div>
@@ -201,7 +276,8 @@
                 </div>
 
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
-                    <div class="service__item-2 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <div class="service__item-2 service__item-2-odd wow animate__animated animate__fadeInUp"
+                        data-wow-delay="0.3s">
                         <div class="">
                             <h3 class="service__title ps-4">Actionable Insights</h3>
                         </div>
@@ -218,42 +294,8 @@
     <!-- Service area end -->
 
 
-    <!-- Process area start -->
-    <section class="process__area-2 pb-130">
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
-                    <div class="process__left-2 pt-130 pb-130">
-                        <h2 class="sec-sub-title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">Work
-                            Together</h2>
-                        <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">Works
-                            Process With <br>
-                            Team Leaders</h3>
-                        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">There are many
-                            variations of
-                            passages of Lorem Ipsum available, the majority have suffered alteration in
-                            some form, by injected humour. randomised words which don't look even slightly believable.
-                            It uses a
-                            dictionary of over 200 Latin words, combined with </p>
-                        <a href="team.html" class="cxu-btn-round wow animate__animated animate__fadeInUp"
-                            data-wow-delay="0.7s">JOIN
-                            THE TEAM</a>
-                    </div>
-                </div>
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
-                    <div class="process__content-2 inherit-right">
-                        <button data-bs-toggle="modal" data-bs-target="#workProcessModal2"><img
-                                src="assets/imgs/work-process/1.png" alt="Icon"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Process area end -->
-
-
     <!-- Team area start -->
-    <section class="team__area">
+    <section class="team__area pt-100">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
@@ -262,7 +304,7 @@
                             Skilled Team
                         </h2>
                         <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">Meet
-                            The<span>Leaders.</span></h3>
+                            The<span> Leaders.</span></h3>
                     </div>
                     <div class="team__slider-wrap">
                         <div class="swiper team__slider">

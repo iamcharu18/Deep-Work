@@ -3469,12 +3469,12 @@ img {
   }
 }
 
-.service__item-2:hover {
+/* .service__item-2:hover {
   background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
   background-image: linear-gradient(to right, var(--secondary), var(--primary));
-}
+} */
 
-.service__item-2:hover .service__title {
+/* .service__item-2:hover .service__title {
   color: var(--white);
 }
 
@@ -3485,7 +3485,7 @@ img {
 
 .service__item-2:hover .service__btm-2 p {
   color: var(--white);
-}
+} */
 
 .service__left .icon {
   width: 70px;

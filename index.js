@@ -91,4 +91,22 @@ app.get("/services/bookkeeping-service", function (req, res) {
     });
 });
 
+app.get("/services/legal-compliances", function (req, res) {
+    res.render("services/legal-compliance", {
+        title: "Legal Compliances",
+    });
+});
+
+app.get("/services/statutory-compliances", function (req, res) {
+    res.render("services/statutory-compliance", {
+        title: "Statutory Compliances",
+    });
+});
+
+app.get("/services/payroll-service", function (req, res) {
+    res.render("services/payroll-outsourcing", {
+        title: "Payroll Outsourcing",
+    });
+});
+
 module.exports = app;

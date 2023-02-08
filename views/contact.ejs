@@ -65,9 +65,17 @@
                         <form id="contact-form">
                             <div class="input-grp">
                                 <input type="text" id="name" placeholder="Your Name*" name="name" required>
-                                <input type="email" id="email" name="email" placeholder="Type Your Email" required>
+                                <input type="email" id="email" name="email" placeholder="Email*" required>
                             </div>
-                            <input type="text" id="subject" name="subject" placeholder="Write Subject" required>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number* 9988998899"
+                                pattern="[0-9]{10}" required>
+                            <input type="text" id="subject" name="subject" placeholder="Subject*" required>
+                            <label for="category">Service you're looking for?</label>
+                            <select name="category" id="category" required>
+                                <option value="service1">Service 1</option>
+                                <option value="service2">Service 2</option>
+                                <option value="service3">Service 3</option>
+                            </select>
                             <textarea name="message" id="message" rows="3" placeholder="Write Your Messages"></textarea>
                             <!-- <input type="submit" value="Submit" id="submit" class="submit"> -->
                             <button class="submit" type="submit" id="submit">SEND</button>
