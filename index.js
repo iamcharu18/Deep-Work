@@ -88,3 +88,5 @@ app.get("/services/bookkeeping-service", function (req, res) {
         title: "Bookkeeping Service",
     });
 });
+
+module.exports = app;
