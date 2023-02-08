@@ -70,7 +70,7 @@ app.post("/sendmail", function (req, res) {
     transporter.sendMail(mailOptions, (error, response) => {
         if (error) {
             console.log(error);
-            res.send("error")
+            res.status(400);
         } else {
             console.log("Email Sent");
             res.send("success")
