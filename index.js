@@ -9,8 +9,8 @@ require('dotenv').config();
 const user = process.env.USER;
 const pass = process.env.PASSWORD;
 
-app.use('/assets', express.static('assets'))
-app.use('/services/assets', express.static('assets'))
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
+app.use('/services/assets', express.static(path.join(__dirname, 'assets')))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
