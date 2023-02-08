@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const nodemailer = require("nodemailer");
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //setting view engine to ejs
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
 
 app.listen(process.env.PORT || 3000, () => {
     console.log("Server running at http://localhost:3000/");
