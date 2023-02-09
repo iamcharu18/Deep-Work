@@ -7348,7 +7348,9 @@ img {
 }
 
 .contact__form input,
-.contact__form textarea {
+.contact__form textarea,
+.contact__form select,
+.contact__form option {
   width: 100%;
   padding: 15px 20px;
   border-radius: 5px;

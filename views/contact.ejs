@@ -70,11 +70,14 @@
                             <input type="tel" id="phone" name="phone" placeholder="Phone Number* 9988998899"
                                 pattern="[0-9]{10}" required>
                             <input type="text" id="subject" name="subject" placeholder="Subject*" required>
-                            <label for="category">Service you're looking for?</label>
-                            <select name="category" id="category" required>
-                                <option value="service1">Service 1</option>
-                                <option value="service2">Service 2</option>
-                                <option value="service3">Service 3</option>
+                            <select name="category" id="category" required multiple>
+                                <option value="" disabled selected>Service you're looking for?</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="hamster">Hamster</option>
+                                <option value="parrot">Parrot</option>
+                                <option value="spider">Spider</option>
+                                <option value="goldfish">Goldfish</option>
                             </select>
                             <textarea name="message" id="message" rows="3" placeholder="Write Your Messages"></textarea>
                             <!-- <input type="submit" value="Submit" id="submit" class="submit"> -->
