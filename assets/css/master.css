@@ -373,13 +373,17 @@ img {
 }
 
 .list-check {
-  display: -ms-grid;
+  /* display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 20px 1fr;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 20px; */
   padding-top: 25px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+}
+
+.about__area .about__left img {
+  max-width: 320px !important;
 }
 
 @media (max-width: 1199px) {
@@ -394,6 +398,7 @@ img {
 .list-check li {
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 18px;
   color: var(--black-2);
   position: relative;
   padding-left: 35px;
