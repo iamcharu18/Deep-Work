@@ -5407,7 +5407,7 @@ img {
   font-family: var(--font-poppins);
   font-size: 48px;
   color: var(--white);
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
   font-weight: 700;
   padding-bottom: 40px;
