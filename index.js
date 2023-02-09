@@ -115,4 +115,10 @@ app.get("/services/payroll-service", function (req, res) {
     });
 });
 
+app.get("*", function (req, res) {
+    res.render("404", {
+        title: "Error",
+    });
+});
+
 module.exports = app;
