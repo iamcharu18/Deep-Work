@@ -103,6 +103,12 @@ app.get("/services/statutory-compliances", function (req, res) {
     });
 });
 
+app.get("/services/ipr-service", function (req, res) {
+    res.render("services/ipr", {
+        title: "IPR Service",
+    });
+});
+
 app.get("/services/payroll-service", function (req, res) {
     res.render("services/payroll-outsourcing", {
         title: "Payroll Outsourcing",
