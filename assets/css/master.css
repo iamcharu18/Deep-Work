@@ -3134,8 +3134,8 @@ img {
   content: "+";
   width: 130px;
   height: 130px;
-  top: 180px;
-  margin-left: 90px;
+  top: 190px;
+  margin-left: 75px;
   font-weight: 700;
   font-size: 150px;
   z-index: 9;
@@ -3156,16 +3156,16 @@ img {
     width: 110px;
     height: 110px;
     top: 135px;
-    margin-left: 80px;
+    margin-left: 50px;
     font-size: 130px;
   }
 }
 
 @media (max-width: 991px) {
   .about__left-2::after {
-    width: 90px;
-    height: 90px;
-    top: 95px;
+    width: 75px;
+    height: 75px;
+    top: 105px;
     font-size: 110px;
     margin-left: 45px;
   }

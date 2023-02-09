@@ -53,7 +53,7 @@ app.get("/contact", function (req, res) {
 // route for sending mail
 app.post("/sendmail", function (req, res) {
     // console.log(req.body);
-    const { name, email, subject, message } = req.body;
+    const { name, email, subject, message, phone, category } = req.body;
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -65,7 +65,7 @@ app.post("/sendmail", function (req, res) {
         from: "sobhansai03@gmail.com",
         to: "sobhansaikuriti03@gmail.com",
         subject: `New Contact Sent from website`,
-        html: `<h1>${subject}</h1><p>${name}</p><p>${email}</p><p>${message}</p>`
+        html: `<h1>${subject}</h1><p>${name}</p><p>${email}</p><p>${phone}</p><p>${category}</p><p>${message}</p>`
     };
     transporter.sendMail(mailOptions, (error, response) => {
         if (error) {

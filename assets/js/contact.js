@@ -2,15 +2,23 @@ let contactFormEl = document.getElementById("contact-form");
 let nameEl = document.getElementById("name");
 let emailEl = document.getElementById("email");
 let subjectEl = document.getElementById("subject");
+let phoneEl = document.getElementById("phone");
 let messageEl = document.getElementById("message");
+let categoryEl = document.getElementById("category");
 let submitEl = document.getElementById("submit");
+
+
+
 // console.log(1);
 contactFormEl.addEventListener("submit", async (e) => {
     e.preventDefault();
+    let selectedOptions = Array.from(categoryEl.selectedOptions).map(({ value }) => value);
     let formData = {
         name: nameEl.value,
         email: emailEl.value,
         subject: subjectEl.value,
+        phone: phoneEl.value,
+        category: selectedOptions,
         message: messageEl.value
     }
 
@@ -22,7 +30,7 @@ contactFormEl.addEventListener("submit", async (e) => {
         headers: { "Content-Type": "application/json" }
     };
 
-    // console.log(1);
+    // console.log(formData);
 
     let url = "/sendmail";
 
@@ -41,6 +49,8 @@ contactFormEl.addEventListener("submit", async (e) => {
                 emailEl.value = "";
                 subjectEl.value = "";
                 messageEl.value = "";
+                phoneEl.value = "";
+                categoryEl.value = "";
                 submitEl.innerText = "Message Sent Successfully!";
             }
         });
