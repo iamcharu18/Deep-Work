@@ -3829,8 +3829,9 @@ img {
 .testimonial__area .sec-title-wrap::before {
   position: absolute;
   content: "";
-  width: 220px;
-  height: 180px;
+  width: 50%;
+  height: -webkit-fill-available;
+  background-size: contain;
   left: 260px;
   background-image: url(../imgs/testimonial/quote.png);
   background-repeat: no-repeat;
@@ -3858,8 +3859,9 @@ img {
 .testimonial__area .sec-title-wrap::after {
   position: absolute;
   content: "";
-  width: 220px;
-  height: 180px;
+  width: 50%;
+  height: -webkit-fill-available;
+  background-size: contain;
   right: 260px;
   top: 0;
   background-image: url(../imgs/testimonial/quote-2.png);
