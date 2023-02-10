@@ -115,6 +115,12 @@ app.get("/services/payroll-service", function (req, res) {
     });
 });
 
+app.get("/services/monthly-compliances", function (req, res) {
+    res.render("services/monthly-compliance", {
+        title: "Monthly Compliance",
+    });
+});
+
 app.get("*", function (req, res) {
     res.render("404", {
         title: "Error",

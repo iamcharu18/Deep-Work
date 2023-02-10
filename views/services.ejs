@@ -534,191 +534,115 @@
     <!-- Hire area end -->
 
     <!-- Testimonial area start -->
-    <section class="testimonial__area pt-130 pb-110">
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-12">
-                    <div class="sec-title-wrap">
-                        <h2 class="sec-sub-title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                            Testimonials</h2>
-                        <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">Customer's
-                            Awesome <br>
-                            <span>Feedback.</span>
-                        </h3>
-                    </div>
-                    <div class="testimonial__slider-wrap">
-                        <div class="swiper testimonial__slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testimonial__slide">
-                                        <img src="assets/imgs/testimonial/1.jpg" alt="Client"
-                                            class="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                                        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">Donec
-                                            scelerisque dolor id
-                                            nunc dictum, interdum gravida mauris rhoncus. Aliquam at ultrices
-                                            nunc. In sem leo, fermentum at lorem in, porta finibus mauris. Aliquam
-                                            consectetur, ex in gravida
-                                            porttitor. There are many variations of passages </p>
-                                        <h4 class="testimonial__name wow animate__animated animate__fadeInUp"
-                                            data-wow-delay="0.7s">Nirob
-                                            Aronno</h4>
-                                        <h5 class="testimonial__role wow animate__animated animate__fadeInUp"
-                                            data-wow-delay="0.9s">
-                                            Marketing Manager</h5>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial__slide">
-                                        <img src="assets/imgs/testimonial/2.jpg" alt="Client"
-                                            class="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                                        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">Donec
-                                            scelerisque dolor id
-                                            nunc dictum, interdum gravida mauris rhoncus. Aliquam at ultrices
-                                            nunc. In sem leo, fermentum at lorem in, porta finibus mauris. Aliquam
-                                            consectetur, ex in gravida
-                                            porttitor. There are many variations of passages </p>
-                                        <h4 class="testimonial__name wow animate__animated animate__fadeInUp"
-                                            data-wow-delay="0.7s">Jonathon
-                                            Fedrik</h4>
-                                        <h5 class="testimonial__role wow animate__animated animate__fadeInUp"
-                                            data-wow-delay="0.9s">
-                                            Marketing Manager</h5>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial__slide">
-                                        <img src="assets/imgs/testimonial/3.jpg" alt="Client"
-                                            class="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-                                        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">Donec
-                                            scelerisque dolor id
-                                            nunc dictum, interdum gravida mauris rhoncus. Aliquam at ultrices
-                                            nunc. In sem leo, fermentum at lorem in, porta finibus mauris. Aliquam
-                                            consectetur, ex in gravida
-                                            porttitor. There are many variations of passages </p>
-                                        <h4 class="testimonial__name wow animate__animated animate__fadeInUp"
-                                            data-wow-delay="0.7s">Samrat
-                                            Devnath </h4>
-                                        <h5 class="testimonial__role wow animate__animated animate__fadeInUp"
-                                            data-wow-delay="0.9s">
-                                            Marketing Manager</h5>
-                                    </div>
-                                </div>
-                            </div>
+    <%- include('partials/testimonial'); -%>
+        <!-- Testimonial area end -->
 
-                            <div class="swiper-pagination wow animate__animated animate__fadeInUp"
-                                data-wow-delay="0.8s"></div>
+        <!-- Price area start pt-130-->
+        <section class="package__area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="sec-title-wrap">
+                            <h2 class="sec-sub-title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                                Pricing
+                                Plans</h2>
+                            <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">We Made
+                                The
+                                Plans <br>
+                                <span>For You.</span>
+                            </h3>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonial area end -->
-
-    <!-- Price area start pt-130-->
-    <section class="package__area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-12">
-                    <div class="sec-title-wrap">
-                        <h2 class="sec-sub-title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">Pricing
-                            Plans</h2>
-                        <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">We Made The
-                            Plans <br>
-                            <span>For You.</span>
-                        </h3>
-                    </div>
-                    <div class="package__duration wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
-                        <div class="monthly">
-                            <p>MONTHLY</p>
-                        </div>
-                        <div class="pkg-btn">
-                            <input type="checkbox" name="package" class="price-type">
-                        </div>
-                        <div class="yearly">
-                            <p>YEARLY</p>
-                        </div>
-                    </div>
-                    <div class="package__list">
-                        <div class="package__type starter wow animate__animated animate__fadeInUp"
-                            data-wow-delay="0.2s">
-                            <div class="package__top">
-                                <div class="package__title-wrap">
-                                    <h4 class="package__title">Starter</h4>
-                                    <h5 class="package__sub-title">Monthly Package</h5>
-                                </div>
-                                <div class="package__price">$<span class="monthly_price">39</span><span
-                                        class="yearly_price">59</span>
-                                </div>
+                        <div class="package__duration wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                            <div class="monthly">
+                                <p>MONTHLY</p>
                             </div>
-                            <div class="package__feature">
-                                <ul>
-                                    <li>Strategy & Research</li>
-                                    <li>SEO Optimization</li>
-                                    <li>Business & Finance Analyzing</li>
-                                    <li class="disabled">Website Design</li>
-                                    <li class="disabled">Website Development</li>
-                                    <li class="disabled">10 Email Address</li>
-                                </ul>
-                                <a href="price-2.html" class="plan-2">Choose Plan</a>
+                            <div class="pkg-btn">
+                                <input type="checkbox" name="package" class="price-type">
+                            </div>
+                            <div class="yearly">
+                                <p>YEARLY</p>
                             </div>
                         </div>
-                        <div class="package__type standard wow animate__animated animate__fadeInUp"
-                            data-wow-delay="0.4s">
-                            <div class="package__top">
-                                <div class="package__title-wrap">
-                                    <h4 class="package__title">standard</h4>
-                                    <h5 class="package__sub-title">Monthly Package</h5>
+                        <div class="package__list">
+                            <div class="package__type starter wow animate__animated animate__fadeInUp"
+                                data-wow-delay="0.2s">
+                                <div class="package__top">
+                                    <div class="package__title-wrap">
+                                        <h4 class="package__title">Starter</h4>
+                                        <h5 class="package__sub-title">Monthly Package</h5>
+                                    </div>
+                                    <div class="package__price">$<span class="monthly_price">39</span><span
+                                            class="yearly_price">59</span>
+                                    </div>
                                 </div>
-                                <div class="package__price">$<span class="monthly_price">59</span><span
-                                        class="yearly_price">99</span>
-                                </div>
-                            </div>
-                            <div class="package__feature">
-                                <ul>
-                                    <li>Strategy & Research</li>
-                                    <li>SEO Optimization</li>
-                                    <li>Business & Finance Analyzing</li>
-                                    <li>Website Design</li>
-                                    <li class="disabled">Website Development</li>
-                                    <li class="disabled">10 Email Address</li>
-                                </ul>
-                                <a href="price-2.html" class="plan">Choose Plan</a>
-                            </div>
-                        </div>
-                        <div class="package__type premium wow animate__animated animate__fadeInUp"
-                            data-wow-delay="0.6s">
-                            <div class="package__top">
-                                <div class="package__title-wrap">
-                                    <h4 class="package__title">premium</h4>
-                                    <h5 class="package__sub-title">Monthly Package</h5>
-                                </div>
-                                <div class="package__price">$<span class="monthly_price">99</span><span
-                                        class="yearly_price">149</span>
+                                <div class="package__feature">
+                                    <ul>
+                                        <li>Strategy & Research</li>
+                                        <li>SEO Optimization</li>
+                                        <li>Business & Finance Analyzing</li>
+                                        <li class="disabled">Website Design</li>
+                                        <li class="disabled">Website Development</li>
+                                        <li class="disabled">10 Email Address</li>
+                                    </ul>
+                                    <a href="price-2.html" class="plan-2">Choose Plan</a>
                                 </div>
                             </div>
-                            <div class="package__feature">
-                                <ul>
-                                    <li>Strategy & Research</li>
-                                    <li>SEO Optimization</li>
-                                    <li>Business & Finance Analyzing</li>
-                                    <li>Website Design</li>
-                                    <li>Website Development</li>
-                                    <li>10 Email Address</li>
-                                </ul>
-                                <a href="price-2.html" class="plan-2">Choose Plan</a>
+                            <div class="package__type standard wow animate__animated animate__fadeInUp"
+                                data-wow-delay="0.4s">
+                                <div class="package__top">
+                                    <div class="package__title-wrap">
+                                        <h4 class="package__title">standard</h4>
+                                        <h5 class="package__sub-title">Monthly Package</h5>
+                                    </div>
+                                    <div class="package__price">$<span class="monthly_price">59</span><span
+                                            class="yearly_price">99</span>
+                                    </div>
+                                </div>
+                                <div class="package__feature">
+                                    <ul>
+                                        <li>Strategy & Research</li>
+                                        <li>SEO Optimization</li>
+                                        <li>Business & Finance Analyzing</li>
+                                        <li>Website Design</li>
+                                        <li class="disabled">Website Development</li>
+                                        <li class="disabled">10 Email Address</li>
+                                    </ul>
+                                    <a href="price-2.html" class="plan">Choose Plan</a>
+                                </div>
+                            </div>
+                            <div class="package__type premium wow animate__animated animate__fadeInUp"
+                                data-wow-delay="0.6s">
+                                <div class="package__top">
+                                    <div class="package__title-wrap">
+                                        <h4 class="package__title">premium</h4>
+                                        <h5 class="package__sub-title">Monthly Package</h5>
+                                    </div>
+                                    <div class="package__price">$<span class="monthly_price">99</span><span
+                                            class="yearly_price">149</span>
+                                    </div>
+                                </div>
+                                <div class="package__feature">
+                                    <ul>
+                                        <li>Strategy & Research</li>
+                                        <li>SEO Optimization</li>
+                                        <li>Business & Finance Analyzing</li>
+                                        <li>Website Design</li>
+                                        <li>Website Development</li>
+                                        <li>10 Email Address</li>
+                                    </ul>
+                                    <a href="price-2.html" class="plan-2">Choose Plan</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Price area end -->
+        </section>
+        <!-- Price area end -->
 
 
-    <!-- Brand area start -->
-    <!-- <section class="brand__area">
+        <!-- Brand area start -->
+        <!-- <section class="brand__area">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
@@ -743,5 +667,5 @@
             </div>
         </div>
     </section> -->
-    <!-- Brand area end -->
-    <%- include('partials/footer'); -%>
+        <!-- Brand area end -->
+        <%- include('partials/footer'); -%>
