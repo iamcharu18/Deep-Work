@@ -65,7 +65,7 @@ app.post("/sendmail", function (req, res) {
         from: "sobhansai03@gmail.com",
         to: "sobhansaikuriti03@gmail.com",
         subject: `New Contact Sent from website`,
-        html: `<h1>${subject}</h1><p>${name}</p><p>${email}</p><p>${phone}</p><p>${category}</p><p>${message}</p>`
+        html: `<h2>Subject : ${subject}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Phone : ${phone}</p><p>Category : ${category}</p><p>Message : ${message}</p>`
     };
     transporter.sendMail(mailOptions, (error, response) => {
         if (error) {
