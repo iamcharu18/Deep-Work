@@ -121,6 +121,18 @@ app.get("/services/monthly-compliances", function (req, res) {
     });
 });
 
+app.get("/services/labour-compliances", function (req, res) {
+    res.render("services/labour-compliance", {
+        title: "Labour Compliance",
+    });
+});
+
+app.get("/services/valuation-service", function (req, res) {
+    res.render("services/business-valuation", {
+        title: "Business Valuation",
+    });
+});
+
 app.get("*", function (req, res) {
     res.render("404", {
         title: "Error",
