@@ -2364,7 +2364,7 @@ img {
   max-width: 160px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content;
+  height: auto;
 }
 
 .offcanvas__top button {
