@@ -46,6 +46,9 @@
 /*  01. VARIBALES DECLARARION
 /*----------------------------------------*/
 :root {
+  --try-col-1: #10596E;
+  --try-col-2: #0c284e;
+
   --primary: #ff4904;
   --secondary: #f50366;
   --white: #fff;

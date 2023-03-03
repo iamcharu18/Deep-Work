@@ -133,6 +133,12 @@ app.get("/services/valuation-service", function (req, res) {
     });
 });
 
+app.get("/home-2", function (req, res) {
+    res.render("home.ejs", {
+        title: "Second Home",
+    });
+})
+
 app.get("*", function (req, res) {
     res.render("404", {
         title: "Error",
