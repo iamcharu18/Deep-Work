@@ -7,8 +7,78 @@
             <div class="row">
                 <div class="col-xxl-12">
                     <div class="hero__content">
-                        <h1 class="hero__sub-title cxufadeUp">Leave the numbers to us</h1>
-                        <h2 class="hero__title cxufadeUp2">Deepwork</h2>
+                        <h1 class="hero__sub-title cxufadeUp" style="color: var(--white);">Leave the numbers to us</h1>
+                        <h2 class="hero__title cxufadeUp2">We have Services Tailored to your Needs<ul
+                                class="dynamic-txts">
+                                <li><span>Deepwork 1</span></li>
+                                <li><span>2 Designer</span></li>
+                                <li><span>3 Developer</span></li>
+                                <li><span>4 Freelancer</span></li>
+                                <li><span>5 Deepwork 1</span></li>
+                                <li><span>6 Designer</span></li>
+                                <li><span>7 Developer</span></li>
+                                <li><span>8 Freelancer</span></li>
+                            </ul>
+                        </h2>
+
+                        <style scoped>
+                            .hero__title {
+                                /* display: flex; */
+                            }
+
+                            .hero__title .dynamic-txts {
+                                /* margin-left: 15px; */
+                                height: 90px;
+                                line-height: 90px;
+                                overflow: hidden;
+                            }
+
+                            .dynamic-txts li {
+                                list-style: none;
+                                /* color: #FC6D6D; */
+                                /* font-size: 60px; */
+                                /* font-weight: 500; */
+                                position: relative;
+                                top: 0;
+                                animation: slide 12s steps(4) infinite;
+                            }
+
+                            @keyframes slide {
+                                100% {
+                                    top: -360px;
+                                }
+                            }
+
+                            .dynamic-txts li span {
+                                position: relative;
+                                margin: 5px 0;
+                                /* line-height: 90px; */
+                            }
+
+                            .dynamic-txts li span::after {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                height: 100%;
+                                width: 100%;
+                                background: #000314;
+                                border-left: 2px solid #FC6D6D;
+                                animation: typing 3s steps(10) infinite;
+                            }
+
+                            @keyframes typing {
+
+                                40%,
+                                60% {
+                                    left: calc(100% + 30px);
+                                }
+
+                                100% {
+                                    left: 0;
+                                }
+                            }
+                        </style>
                         <p class="cxufadeUp3">Customized accounting services that maximize your time, resources, and
                             financials.
                         </p>
@@ -122,9 +192,9 @@
                             <div class="about__right-inner">
                                 <h2 class="sec-sub-title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
                                     About Company</h2>
-                                <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">25+
-                                    YEARS WORKING
-                                    <span>EXPERIENCE.</span>
+                                <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">WHY
+                                    CHOOSE
+                                    <span>DEEPWORK?</span>
                                 </h3>
                                 <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">With diverse
                                     global
