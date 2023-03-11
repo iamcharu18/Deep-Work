@@ -2575,7 +2575,7 @@ img {
 /*  14. HERO CSS START
 /*----------------------------------------*/
 .hero__area {
-  background-image: url(../imgs/hero/hero-bg.jpeg);
+  background-image: url("../imgs/Deepwork\ Banners/Home banner .jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2746,7 +2746,7 @@ img {
 }
 
 .breadcrumb__area {
-  background-image: url(../imgs/hero/bcrumb-bg.jpeg);
+  background-image: url("../imgs/Deepwork\ Banners/Service.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -4072,7 +4072,7 @@ img {
 /*----------------------------------------*/
 .process__area {
   position: relative;
-  background-image: url(../imgs/work-process/2.png);
+  background-image: url("../imgs/Deepwork\ Banners/Call Banner Image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -5371,7 +5371,7 @@ img {
 .hire__area-2 {
   position: relative;
   padding: 210px 0;
-  background-image: url(../imgs/bg/hire.png);
+  background-image: url("../imgs/Deepwork\ Banners/Call Banner Image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
