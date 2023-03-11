@@ -2714,7 +2714,7 @@ img {
 }
 
 .hero__title {
-  font-size: 120px;
+  font-size: 80px;
   color: var(--white);
   font-weight: 700;
   line-height: 1;
@@ -4139,7 +4139,8 @@ img {
 .process__content-2 {
   background-image: url(../imgs/work-process/3.jpeg);
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5370,7 +5371,7 @@ img {
 .hire__area,
 .hire__area-2 {
   position: relative;
-  padding: 210px 0;
+  padding: 60px 0;
   background-image: url("../imgs/Deepwork\ Banners/Call Banner Image.jpg");
   background-position: center;
   background-repeat: no-repeat;
