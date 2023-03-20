@@ -2743,7 +2743,12 @@ img {
 }
 
 .hero__title span {
-  color: var(--primary);
+  /* color: var(--primary); */
+}
+
+#typing-animation {
+  border-right: solid white 4px;
+  height: 35px;
 }
 
 .breadcrumb__area {
@@ -3002,7 +3007,7 @@ img {
 }
 
 .about__area .shape {
-  position: absolute;
+  /* position: absolute; */
   top: 65px;
   left: 48%;
   border: none;
@@ -3025,7 +3030,7 @@ img {
   .about__area .shape {
     top: 120px;
     left: 10%;
-    max-width: 70px;
+    /* max-width: 70px; */
   }
 }
 

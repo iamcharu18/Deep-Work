@@ -79,27 +79,51 @@ app.post("/sendmail", function (req, res) {
 })
 
 //route for individual services
-app.get("/services/accounting-service", function (req, res) {
-    res.render("services/accounting", {
-        title: "Accounting Service",
+app.get("/services/accounting-and-bookkeeping-service", function (req, res) {
+    res.render("services/1-accounting-and-bookkeeping", {
+        title: "Accounting and Book Keeping Service",
     });
 });
 
-app.get("/services/bookkeeping-service", function (req, res) {
-    res.render("services/bookkeeping", {
-        title: "Bookkeeping Service",
+app.get("/services/gst-service", function (req, res) {
+    res.render("services/2-gst", {
+        title: "GST Services",
+    });
+});
+
+app.get("/services/it-returns", function (req, res) {
+    res.render("services/3-income-tax", {
+        title: "Income Tax returns",
+    });
+});
+
+app.get("/services/payroll-management", function (req, res) {
+    res.render("services/4-payroll-management", {
+        title: "Payroll Management",
+    });
+});
+
+app.get("/services/corporate-secretarial", function (req, res) {
+    res.render("services/5-corporate-secretarial", {
+        title: "Corporate Secretarial",
+    });
+});
+
+app.get("/services/statutory-and-other-compliances", function (req, res) {
+    res.render("services/6-statutory-and-other-compliance", {
+        title: "Statutory & other Compliances",
+    });
+});
+
+app.get("/startup/private-limited-company-registration", function (req, res) {
+    res.render("startup/private-limited-company-registration", {
+        title: "Private Limited Company Registration",
     });
 });
 
 app.get("/services/legal-compliances", function (req, res) {
     res.render("services/legal-compliance", {
         title: "Legal Compliances",
-    });
-});
-
-app.get("/services/statutory-compliances", function (req, res) {
-    res.render("services/statutory-compliance", {
-        title: "Statutory Compliances",
     });
 });
 
