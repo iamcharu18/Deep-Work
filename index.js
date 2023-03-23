@@ -121,6 +121,25 @@ app.get("/startup/private-limited-company-registration", function (req, res) {
     });
 });
 
+app.get("/startup/llp-company-registration", function (req, res) {
+    res.render("startup/llp-company-registration", {
+        title: "Limited Liability Partnership Company Registration",
+    });
+});
+
+app.get("/startup/opc-registration", function (req, res) {
+    res.render("startup/opc-registration", {
+        title: "One-Person Company (OPC) Registration",
+    });
+});
+
+app.get("/startup/ngo-registration", function (req, res) {
+    res.render("startup/ngo-registration", {
+        title: "NGO/Section 8 Company Registration",
+    });
+});
+
+
 app.get("/services/legal-compliances", function (req, res) {
     res.render("services/legal-compliance", {
         title: "Legal Compliances",
