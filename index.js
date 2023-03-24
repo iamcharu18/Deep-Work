@@ -152,6 +152,12 @@ app.get("/services/ipr-service", function (req, res) {
     });
 });
 
+app.get("/services/mergers-and-aquisitions", function (req, res) {
+    res.render("services/12-mergers-and-aquisitions", {
+        title: "Mergers and Aquisitions",
+    });
+});
+
 app.get("/startup/private-limited-company-registration", function (req, res) {
     res.render("startup/private-limited-company-registration", {
         title: "Private Limited Company Registration",
