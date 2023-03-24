@@ -121,6 +121,37 @@ app.get("/services/outsourcing", function (req, res) {
     });
 });
 
+app.get("/services/cost-and-works-compliance", function (req, res) {
+    res.render("services/8-cost-and-works-compliances", {
+        title: "Cost and Works Compliance",
+    });
+});
+
+app.get("/services/cost-and-works-compliance", function (req, res) {
+    res.render("services/8-cost-and-works-compliances", {
+        title: "Cost and Works Compliance",
+    });
+});
+
+// PENDING?
+// app.get("/services/startup", function (req, res) {
+//     res.render("services/8-cost-and-works-compliances", {
+//         title: "Cost and Works Compliance",
+//     });
+// });
+
+app.get("/services/business-valuation", function (req, res) {
+    res.render("services/10-business-valuation", {
+        title: "Business Valuation",
+    });
+});
+
+app.get("/services/ipr-service", function (req, res) {
+    res.render("services/11-ipr", {
+        title: "IPR Service",
+    });
+});
+
 app.get("/startup/private-limited-company-registration", function (req, res) {
     res.render("startup/private-limited-company-registration", {
         title: "Private Limited Company Registration",
