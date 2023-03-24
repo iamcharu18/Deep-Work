@@ -3478,6 +3478,7 @@ img {
   -webkit-transition: all 0.75s;
   transition: all 0.75s;
   background-color: var(--white);
+  height: 90%;
 }
 
 @media (max-width: 1199px) {
