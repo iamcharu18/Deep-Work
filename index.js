@@ -121,9 +121,9 @@ app.get("/services/outsourcing", function (req, res) {
     });
 });
 
-app.get("/services/cost-and-works-compliance", function (req, res) {
+app.get("/services/profitability-analytics-and-management", function (req, res) {
     res.render("services/8-cost-and-works-compliances", {
-        title: "Cost and Works Compliance",
+        title: "Profitability Analytics and Management",
     });
 });
 
@@ -146,9 +146,9 @@ app.get("/services/ipr-service", function (req, res) {
     });
 });
 
-app.get("/services/mergers-and-aquisitions", function (req, res) {
-    res.render("services/12-mergers-and-aquisitions", {
-        title: "Mergers and Aquisitions",
+app.get("/services/mergers-and-acquisitions", function (req, res) {
+    res.render("services/12-mergers-and-acquisitions", {
+        title: "Mergers and Acquisitions",
     });
 });
 
