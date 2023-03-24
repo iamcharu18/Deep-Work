@@ -115,6 +115,12 @@ app.get("/services/statutory-and-other-compliances", function (req, res) {
     });
 });
 
+app.get("/services/outsourcing", function (req, res) {
+    res.render("services/7-outsourcing", {
+        title: "Outsourcing",
+    });
+});
+
 app.get("/startup/private-limited-company-registration", function (req, res) {
     res.render("startup/private-limited-company-registration", {
         title: "Private Limited Company Registration",
