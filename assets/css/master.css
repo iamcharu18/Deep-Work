@@ -2715,7 +2715,7 @@ img {
 }
 
 .hero__title {
-  font-size: 80px;
+  font-size: 46px;
   color: var(--white);
   font-weight: 700;
   line-height: 1;
@@ -2725,19 +2725,19 @@ img {
 
 @media (max-width: 1399px) {
   .hero__title {
-    font-size: 60px;
+    font-size: 46px;
   }
 }
 
 @media (max-width: 991px) {
   .hero__title {
-    font-size: 60px;
+    font-size: 46px;
   }
 }
 
 @media (max-width: 767px) {
   .hero__title {
-    font-size: 40px;
+    font-size: 36px;
     padding-bottom: 20px;
   }
 }

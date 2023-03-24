@@ -127,12 +127,6 @@ app.get("/services/cost-and-works-compliance", function (req, res) {
     });
 });
 
-app.get("/services/cost-and-works-compliance", function (req, res) {
-    res.render("services/8-cost-and-works-compliances", {
-        title: "Cost and Works Compliance",
-    });
-});
-
 // PENDING?
 // app.get("/services/startup", function (req, res) {
 //     res.render("services/8-cost-and-works-compliances", {
