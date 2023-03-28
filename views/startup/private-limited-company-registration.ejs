@@ -33,67 +33,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6" style="align-self: center;">
-                <style scoped>
-                    .how-it-works .how-works-steps-container {
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .how-it-works .how-works-steps-container .single-step {
-                        display: flex;
-                    }
-
-                    .how-it-works .how-works-steps-container .single-step img {
-                        width: 95px;
-                    }
-
-                    .how-it-works .how-works-steps-container .single-step .step-text-container {
-                        align-self: center;
-                    }
-
-                    .how-it-works .how-works-steps-container .single-step .step-text-container h3 {
-                        text-transform: uppercase;
-                        font-size: 20px;
-                        font-weight: bold;
-                    }
-
-                    form {
-                        background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
-                        background-image: linear-gradient(to right, var(--secondary), var(--primary));
-                        color: var(--white);
-                        border-radius: 10px;
-                    }
-                </style>
-
-                <div class="how-it-works">
-                    <h3 class="sec-title wow animate__ animate__fadeInUp animated" data-wow-delay="0.4s"
-                        style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Here's How to
-                        reach us out
-                    </h3>
-                    <div class="how-works-steps-container">
-                        <div class="single-step">
-                            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
-                            <div class="step-text-container">
-                                <h3>Give us Details</h3>
-                                <p>Fill out the form provided and get started.</p>
-                            </div>
-                        </div>
-                        <div class="single-step">
-                            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
-                            <div class="step-text-container">
-                                <h3>We will Call You</h3>
-                                <p>Our Expert will call you for a discussion.</p>
-                            </div>
-                        </div>
-                        <div class="single-step">
-                            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
-                            <div class="step-text-container">
-                                <h3>Service Delivery</h3>
-                                <p>We will start the process of company incorporation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <%- include('../partials/how-it-works'); -%>
             </div>
             <div class="col-md-6 align-self-center">
                 <form class="p-3">
@@ -102,7 +42,7 @@
                         <input type="text" class="form-control" id="name">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="phone">Phone:</label>
+                        <label for="phone">Mobile:</label>
                         <input type="tel" class="form-control" id="phone">
                     </div>
                     <div class="form-group mb-3">
@@ -128,7 +68,7 @@
                     </h3>
                 </div>
 
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 align-self-center">
                     <p class="wow animate__animated animate__fadeInUp pb-2" data-wow-delay="0.6s">Private Limited
                         registration for the company defines that the company is owned by a small number of people.
                         It is the favored form, to begin with, business registration. A company under the Private

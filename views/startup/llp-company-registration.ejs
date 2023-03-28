@@ -5,9 +5,9 @@
             <div class="row">
                 <div class="col-xxl-12">
                     <div class="breadcrumb__content">
-                        <h1 class="breadcrumb__title">Limited Liability Partnership (LLP) Company Registration
+                        <h1 class="breadcrumb__title">Limited Liability Partnership (LLP) Registration
                         </h1>
-                        <p><a href="/">Home</a> <a href="/startup">Startup</a> <span>LLP Company
+                        <p><a href="/">Home</a> <a href="/startup">Startup</a> <span>LLP
                                 Registration</span></p>
                     </div>
                 </div>
@@ -33,67 +33,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6" style="align-self: center;">
-                <style scoped>
-                    .how-it-works .how-works-steps-container {
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .how-it-works .how-works-steps-container .single-step {
-                        display: flex;
-                    }
-
-                    .how-it-works .how-works-steps-container .single-step img {
-                        width: 95px;
-                    }
-
-                    .how-it-works .how-works-steps-container .single-step .step-text-container {
-                        align-self: center;
-                    }
-
-                    .how-it-works .how-works-steps-container .single-step .step-text-container h3 {
-                        text-transform: uppercase;
-                        font-size: 20px;
-                        font-weight: bold;
-                    }
-
-                    form {
-                        background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
-                        background-image: linear-gradient(to right, var(--secondary), var(--primary));
-                        color: var(--white);
-                        border-radius: 10px;
-                    }
-                </style>
-
-                <div class="how-it-works">
-                    <h3 class="sec-title wow animate__ animate__fadeInUp animated" data-wow-delay="0.4s"
-                        style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Here's How to
-                        reach us out
-                    </h3>
-                    <div class="how-works-steps-container">
-                        <div class="single-step">
-                            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
-                            <div class="step-text-container">
-                                <h3>Give us Details</h3>
-                                <p>Fill out the form provided and get started.</p>
-                            </div>
-                        </div>
-                        <div class="single-step">
-                            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
-                            <div class="step-text-container">
-                                <h3>We will Call You</h3>
-                                <p>Our Expert will call you for a discussion.</p>
-                            </div>
-                        </div>
-                        <div class="single-step">
-                            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
-                            <div class="step-text-container">
-                                <h3>Service Delivery</h3>
-                                <p>We will start the process of company incorporation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <%- include('../partials/how-it-works'); -%>
             </div>
             <div class="col-md-6 align-self-center">
                 <form class="p-3">
@@ -102,7 +42,7 @@
                         <input type="text" class="form-control" id="name">
                     </div>
                     <div class="form-group mb-3">
-                        <label for="phone">Phone:</label>
+                        <label for="phone">Mobile:</label>
                         <input type="tel" class="form-control" id="phone">
                     </div>
                     <div class="form-group mb-3">
@@ -124,12 +64,12 @@
                     <h2 class="sec-sub-title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">Make your
                         mark
                         on the world. </h2>
-                    <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">Let's get your
-                        Section 8 company registered today!
+                    <h3 class="sec-title wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">LLP registration
+                        for a secure and flexible business structure!
                     </h3>
                 </div>
 
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 align-self-center">
                     <p class="wow animate__animated animate__fadeInUp pb-2" data-wow-delay="0.6s">As the name conveys, a
                         Limited Liability Company is an independent entity with the flexibility of changing partners. It
                         is a body of corporate registered under the LLP Act, 2008. Small businesses are recommended to
@@ -490,8 +430,18 @@
                             </div>
                         </div>
                     </div>
+                    <style scoped>
+                        .service__item-2 {
+                            margin-bottom: 0;
+                            padding: 20px 20px;
+                        }
+
+                        .service__item-2 .service__title {
+                            padding-bottom: 0;
+                        }
+                    </style>
                     <div class="row">
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6">
                             <div class="service__item-2 wow animate__animated animate__fadeInUp" data-wow-delay="0.15s">
                                 <div class="">
                                     <h3 class="service__title">At least 2 partners are a must to start LLP in India</h3>
@@ -507,7 +457,7 @@
 
                         </div>
 
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6">
                             <div class="service__item-2 service__item-2-odd wow animate__animated animate__fadeInUp"
                                 data-wow-delay="0.3s">
                                 <div class="">
@@ -522,7 +472,7 @@
 
                         </div>
 
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6">
                             <div class="service__item-2 wow animate__animated animate__fadeInUp" data-wow-delay="0.45s">
                                 <div class="">
                                     <h3 class="service__title">Authorized capital is Rs. 1 Lakh is required </h3>
@@ -536,7 +486,7 @@
 
                         </div>
 
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6">
                             <div class="service__item-2 service__item-2-odd wow animate__animated animate__fadeInUp"
                                 data-wow-delay="0.6s">
                                 <div class="">
@@ -551,7 +501,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6">
                             <div class="service__item-2 service__item-2-odd wow animate__animated animate__fadeInUp"
                                 data-wow-delay="0.6s">
                                 <div class="">

@@ -1,0 +1,71 @@
+<style scoped>
+    .how-it-works .how-works-steps-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+    }
+
+    .how-it-works .how-works-steps-container .single-step {
+        display: grid;
+        grid-template-columns: 100px auto;
+        grid-gap: 10px;
+    }
+
+    .how-it-works .how-works-steps-container .single-step img {
+        max-width: 100%;
+        width: 100px;
+    }
+
+    .how-it-works .how-works-steps-container .single-step .step-text-container {
+        align-self: center;
+    }
+
+    .how-it-works .how-works-steps-container .single-step .step-text-container h3 {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    form {
+        background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+        background-image: linear-gradient(to right, var(--secondary), var(--primary));
+        color: var(--white);
+        border-radius: 10px;
+    }
+</style>
+
+<div class="how-it-works">
+    <h3 class="sec-title wow animate__ animate__fadeInUp animated" data-wow-delay="0.4s"
+        style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Here’s How to
+        reach us
+    </h3>
+    <div class="how-works-steps-container">
+        <div class="single-step">
+
+            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
+
+            <div class="step-text-container">
+                <h3>Give us Details</h3>
+                <p>Fill out the form provided and get started.</p>
+            </div>
+        </div>
+        <div class="single-step">
+
+            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
+
+            <div class="step-text-container">
+                <h3>We will Call You</h3>
+                <p>Our Expert will call you for a discussion.</p>
+            </div>
+        </div>
+        <div class="single-step">
+
+            <img src="https://www.startupwala.com/images/call-to-discuss.svg" />
+
+            <div class="step-text-container">
+                <h3>Service Delivery</h3>
+                <p>We will start the process of company incorporation.</p>
+            </div>
+        </div>
+    </div>
+</div>

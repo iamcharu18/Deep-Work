@@ -103,9 +103,9 @@ app.get("/services/payroll-management", function (req, res) {
     });
 });
 
-app.get("/services/corporate-secretarial", function (req, res) {
+app.get("/services/secretarial-services", function (req, res) {
     res.render("services/5-corporate-secretarial", {
-        title: "Corporate Secretarial",
+        title: "Secretarial Services",
     });
 });
 
@@ -173,6 +173,12 @@ app.get("/startup/opc-registration", function (req, res) {
 app.get("/startup/ngo-registration", function (req, res) {
     res.render("startup/ngo-registration", {
         title: "NGO/Section 8 Company Registration",
+    });
+});
+
+app.get("/startup/startup-registrations", function (req, res) {
+    res.render("startup/startup-registrations", {
+        title: "Other Registrations",
     });
 });
 

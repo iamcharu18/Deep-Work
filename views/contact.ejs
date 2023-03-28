@@ -18,10 +18,10 @@
 
     <!-- Contact area start -->
     <section class="contact__area">
-        <div class="contact__top pt-130 pb-125">
+        <div class="contact__top py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-xxl-8 col-x-8 col-lg-9">
+                    <div class="col-xxl-8 col-x-8 col-lg-9 mx-auto">
                         <div class="contact__top-inner">
                             <div class="contact__item">
                                 <div class="icon"><i class="fa-solid fa-phone"></i></div>
@@ -58,7 +58,7 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58408.97484139959!2d90.33915680783855!3d23.798644768568714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c102e2ece5bb%3A0x446e9dc895326a70!2sBangladesh%20National%20Zoo!5e0!3m2!1sen!2sbd!4v1671466814402!5m2!1sen!2sbd"></iframe>
         </div> -->
 
-        <div class="contact__form pt-130 pb-130">
+        <div class="contact__form py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xxl-8 col-x-8 col-lg-6">
@@ -66,10 +66,10 @@
                         <form id="contact-form">
                             <div class="input-grp">
                                 <input type="text" id="name" placeholder="Your Name*" name="name" required>
-                                <input type="email" id="email" name="email" placeholder="Email*" required>
+                                <input type="tel" id="phone" name="phone" placeholder="Mobile Number*"
+                                    pattern="[0-9]{10}" required>
                             </div>
-                            <input type="tel" id="phone" name="phone" placeholder="Phone Number*" pattern="[0-9]{10}"
-                                required>
+                            <input type="email" id="email" name="email" placeholder="Email*" required>
                             <input type="text" id="subject" name="subject" placeholder="Business Type*" required>
                             <!-- <label for="category">Service you're looking for?</label>
                             <select name="category" id="category" required multiple>
@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <script src="assets/js/contact.js"></script>
+        <script src="/assets/js/contact.js"></script>
 
         <!-- <img src="assets/imgs/bg/contact.png" alt="Contact image" class="bg"> -->
     </section>
@@ -101,7 +101,7 @@
 
 
     <!-- Brand area start -->
-    <section class="brand__area">
+    <!-- <section class="brand__area">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
@@ -125,7 +125,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Brand area end -->
 
     <%- include('partials/footer'); -%>
