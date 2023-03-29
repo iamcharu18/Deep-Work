@@ -1,25 +1,17 @@
-let contactFormEl = document.getElementById("contact-form");
+let contactFormEl = document.getElementById("startup-contact-form");
 let nameEl = document.getElementById("name");
 let emailEl = document.getElementById("email");
-let businessTypeEl = document.getElementById("business-type");
 let phoneEl = document.getElementById("phone");
-// let messageEl = document.getElementById("message");
-// let categoryEl = document.getElementById("category");
+let subjectEl = document.getElementById("subject");
 let submitEl = document.getElementById("submit");
 
-
-
-// console.log(1);
 contactFormEl.addEventListener("submit", async (e) => {
     e.preventDefault();
-    // let selectedOptions = Array.from(categoryEl.selectedOptions).map(({ value }) => value);
     let formData = {
         name: nameEl.value,
         email: emailEl.value,
-        businessType: businessTypeEl.value,
         phone: phoneEl.value,
-        // category: selectedOptions,
-        // message: messageEl.value
+        subject: subjectEl.value,
     }
 
     submitEl.innerText = "Sending Message..."
@@ -32,7 +24,7 @@ contactFormEl.addEventListener("submit", async (e) => {
 
     // console.log(formData);
 
-    let url = "/sendmail";
+    let url = "/sendmail-2";
 
     await fetch(url, options)
         .then(function (response) {
@@ -47,10 +39,7 @@ contactFormEl.addEventListener("submit", async (e) => {
                 console.log('success');
                 nameEl.value = "";
                 emailEl.value = "";
-                businessTypeEl.value = "";
-                // messageEl.value = "";
-                phoneEl.value = "";
-                // categoryEl.value = "";
+                phone.value = "";
                 submitEl.innerText = "Message Sent Successfully!";
             }
         });

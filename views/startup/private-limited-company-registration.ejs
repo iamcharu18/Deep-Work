@@ -36,20 +36,22 @@
                 <%- include('../partials/how-it-works'); -%>
             </div>
             <div class="col-md-6 align-self-center">
-                <form class="p-3">
-                    <div class=" form-group mb-3">
+                <form class="p-3" id="startup-contact-form">
+                    <div class="form-group mb-3">
                         <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name">
+                        <input type="text" class="form-control" id="name" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="phone">Mobile:</label>
-                        <input type="tel" class="form-control" id="phone">
+                        <input type="tel" class="form-control" id="phone" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input type="hidden" id="subject"
+                        value="Private Limited Company Registration - New Form Submission">
+                    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
@@ -57,7 +59,7 @@
 
 
     <!-- Process area start -->
-    <section class="process__area-2 steps-section py-5" style="">
+    <section class="process__area-2 steps-section py-5">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 align-self-center">
@@ -530,4 +532,5 @@
         </div>
     </section>
     <!-- About area end -->
+    <script src="/assets/js/contact2.js"></script>
     <%- include('../partials/footer'); -%>

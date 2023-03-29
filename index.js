@@ -53,7 +53,7 @@ app.get("/contact", function (req, res) {
 // route for sending mail
 app.post("/sendmail", function (req, res) {
     // console.log(req.body);
-    const { name, email, subject, message, phone, category } = req.body;
+    const { name, email, businessType, phone } = req.body;
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -65,7 +65,35 @@ app.post("/sendmail", function (req, res) {
         from: "sobhansai03@gmail.com",
         to: "sobhansaikuriti03@gmail.com",
         subject: `New Contact Sent from website`,
-        html: `<h2>Subject : ${subject}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Phone : ${phone}</p><p>Category : ${category}</p><p>Message : ${message}</p>`
+        html: `<h2>Business Type : ${businessType}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
+    };
+    transporter.sendMail(mailOptions, (error, response) => {
+        if (error) {
+            console.log(error);
+            res.status(400);
+        } else {
+            console.log("Email Sent");
+            res.send("success")
+        }
+    });
+})
+
+
+app.post("/sendmail-2", function (req, res) {
+    // console.log(req.body);
+    const { name, email, phone, subject } = req.body;
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user,
+            pass
+        },
+    });
+    const mailOptions = {
+        from: "sobhansai03@gmail.com",
+        to: "sobhansaikuriti03@gmail.com",
+        subject: subject,
+        html: `<h2>Page : ${subject}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
     };
     transporter.sendMail(mailOptions, (error, response) => {
         if (error) {
