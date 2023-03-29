@@ -4441,7 +4441,7 @@ img {
 .team__name {
   font-size: 20px;
   font-weight: 700;
-  color: var(--black-3);
+  color: var(--white);
   padding-bottom: 5px;
   text-transform: capitalize;
   -webkit-transition: all 0.3s;
@@ -4465,7 +4465,7 @@ img {
 
 .team__role {
   font-size: 16px;
-  color: var(--gray);
+  color: var(--gray-3);
   font-family: var(--font-roboto);
   text-transform: capitalize;
 }
@@ -4490,17 +4490,17 @@ img {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
+  /* -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  justify-content: center; */
   gap: 10px;
-  padding: 50px 20px 30px;
-  background-image: url(../imgs/team/bg.png);
+  /* padding: 50px 20px 30px; */
+  /* background-image: url(../imgs/team/bg.png); */
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
-  position: absolute;
-  width: 100%;
+  /* position: absolute; */
+  /* width: 100%; */
   bottom: -30px;
   opacity: 0;
   visibility: hidden;
@@ -4513,19 +4513,19 @@ img {
     opacity: 1;
     bottom: 0;
     visibility: visible;
-    padding: 60px 15px 15px;
+    /* padding: 60px 15px 15px; */
   }
 }
 
 @media (max-width: 991px) {
   .team__social {
-    padding: 80px 15px 15px;
+    /* padding: 80px 15px 15px; */
   }
 }
 
 @media (max-width: 767px) {
   .team__social {
-    padding: 90px 15px 15px;
+    /* padding: 90px 15px 15px; */
   }
 }
 
