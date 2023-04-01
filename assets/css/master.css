@@ -7912,3 +7912,13 @@ width: 24px; */
 .faq__area .service__btm-2 p {
   color: black;
 }
+
+.service__btm-2 .process-list li {
+  list-style: disc;
+  margin-bottom: 10px;
+}
+
+.service__item-2-odd .service__btm-2 p,
+.service__item-2-odd .service__btm-2 li {
+  color: var(--gray);
+}

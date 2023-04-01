@@ -6,7 +6,7 @@ const app = express();
 
 require('dotenv').config();
 
-const user = process.env.USER;
+const user = process.env.USERNAME;
 const pass = process.env.PASSWORD;
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')))
@@ -54,15 +54,23 @@ app.get("/contact", function (req, res) {
 app.post("/sendmail", function (req, res) {
     // console.log(req.body);
     const { name, email, businessType, phone } = req.body;
+    console.log(req.body);
     const transporter = nodemailer.createTransport({
-        service: "gmail",
+        host: process.env.SMTP_SERVER,
+        port: process.env.SMTP_PORT,
+        secure: false,
         auth: {
             user,
             pass
         },
+        tls: {
+            rejectUnauthorized: false
+        },
+        // debug: true, // enable debugging
+        // logger: true // log information
     });
     const mailOptions = {
-        from: "sobhansai03@gmail.com",
+        from: "contact@deepworkco.com",
         to: "sobhansaikuriti03@gmail.com",
         subject: `New Contact Sent from website`,
         html: `<h2>Business Type : ${businessType}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
@@ -83,14 +91,21 @@ app.post("/sendmail-2", function (req, res) {
     // console.log(req.body);
     const { name, email, phone, subject } = req.body;
     const transporter = nodemailer.createTransport({
-        service: "gmail",
+        host: process.env.SMTP_SERVER,
+        port: process.env.SMTP_PORT,
+        secure: false,
         auth: {
             user,
             pass
         },
+        tls: {
+            rejectUnauthorized: false
+        },
+        // debug: true, // enable debugging
+        // logger: true // log information
     });
     const mailOptions = {
-        from: "sobhansai03@gmail.com",
+        from: "contact@deepworkco.com",
         to: "sobhansaikuriti03@gmail.com",
         subject: subject,
         html: `<h2>Page : ${subject}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
@@ -254,6 +269,7 @@ app.get("/home-2", function (req, res) {
 })
 
 app.get("*", function (req, res) {
+    // console.log(req.path);
     res.render("404", {
         title: "Error",
     });
