@@ -55,7 +55,11 @@ app.get("/contact", function (req, res) {
 app.post("/sendmail", function (req, res) {
     // console.log(req.body);
     const { name, email, businessType, phone } = req.body;
-    const dateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    const now = new Date();
+    const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+
+    const date = istTime.toISOString().slice(0, 10);
+    const time = istTime.toISOString().slice(11, 19);
 
     const connection = mysql.createConnection({
         host: process.env.DB_HOST,
@@ -74,7 +78,7 @@ app.post("/sendmail", function (req, res) {
 
     const sql = `INSERT INTO contact_form (name, email, business_type, mobile, date, time) 
                 VALUES (?, ?, ?, ?, ?, ?)`;
-    const values = [name, email, businessType, phone, dateTime.slice(0, 10), dateTime.slice(11, 19)];
+    const values = [name, email, businessType, phone, date, time];
     connection.query(sql, values, function (error, results, fields) {
         if (error) {
             console.error('Error inserting data into database: ' + error.stack);
@@ -117,7 +121,11 @@ app.post("/sendmail", function (req, res) {
 app.post("/sendmail-2", function (req, res) {
     // console.log(req.body);
     const { name, email, phone, subject } = req.body;
-    const dateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    const now = new Date();
+    const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+
+    const date = istTime.toISOString().slice(0, 10);
+    const time = istTime.toISOString().slice(11, 19);
 
     const connection = mysql.createConnection({
         host: process.env.DB_HOST,
@@ -137,7 +145,7 @@ app.post("/sendmail-2", function (req, res) {
 
     const sql = `INSERT INTO contact_form (name, email, mobile, category, date, time) 
                 VALUES (?, ?, ?, ?, ?, ?)`;
-    const values = [name, email, phone, category, dateTime.slice(0, 10), dateTime.slice(11, 19)];
+    const values = [name, email, phone, category, date, time];
     connection.query(sql, values, function (error, results, fields) {
         if (error) {
             console.error('Error inserting data into database: ' + error.stack);
