@@ -70,7 +70,7 @@ app.post("/sendmail", function (req, res) {
         // logger: true // log information
     });
     const mailOptions = {
-        from: "contact@deepworkco.com",
+        from: "contact@deepworkco.in",
         to: "sobhansaikuriti03@gmail.com",
         subject: `New Contact Sent from website`,
         html: `<h2>Business Type : ${businessType}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
@@ -105,7 +105,7 @@ app.post("/sendmail-2", function (req, res) {
         // logger: true // log information
     });
     const mailOptions = {
-        from: "contact@deepworkco.com",
+        from: "contact@deepworkco.in",
         to: "sobhansaikuriti03@gmail.com",
         subject: subject,
         html: `<h2>Page : ${subject}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
