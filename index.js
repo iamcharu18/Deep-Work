@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const nodemailer = require("nodemailer");
+const mysql = require('mysql');
 
 const app = express();
 
@@ -54,35 +55,61 @@ app.get("/contact", function (req, res) {
 app.post("/sendmail", function (req, res) {
     // console.log(req.body);
     const { name, email, businessType, phone } = req.body;
-    console.log(req.body);
-    const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_SERVER,
-        port: process.env.SMTP_PORT,
-        secure: false,
-        auth: {
-            user,
-            pass
-        },
-        tls: {
-            rejectUnauthorized: false
-        },
-        // debug: true, // enable debugging
-        // logger: true // log information
+    const dateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+    const connection = mysql.createConnection({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME
     });
-    const mailOptions = {
-        from: "contact@deepworkco.in",
-        to: "sobhansaikuriti03@gmail.com",
-        subject: `New Contact Sent from website`,
-        html: `<h2>Business Type : ${businessType}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
-    };
-    transporter.sendMail(mailOptions, (error, response) => {
+
+    connection.connect(function (err) {
+        if (err) {
+            console.error('Error connecting to database: ' + err.stack);
+            return;
+        }
+        console.log('Connected to database as id ' + connection.threadId);
+    });
+
+    const sql = `INSERT INTO contact_form (name, email, business_type, mobile, date, time) 
+                VALUES (?, ?, ?, ?, ?, ?)`;
+    const values = [name, email, businessType, phone, dateTime.slice(0, 10), dateTime.slice(11, 19)];
+    connection.query(sql, values, function (error, results, fields) {
         if (error) {
-            console.log(error);
+            console.error('Error inserting data into database: ' + error.stack);
             res.status(400);
         } else {
-            console.log("Email Sent");
-            res.send("success")
+            console.log('Data inserted into database with id ' + results.insertId);
+            const transporter = nodemailer.createTransport({
+                host: process.env.SMTP_SERVER,
+                port: process.env.SMTP_PORT,
+                secure: false,
+                auth: {
+                    user: process.env.SMTP_USER,
+                    pass: process.env.SMTP_PASSWORD
+                },
+                tls: {
+                    rejectUnauthorized: false
+                },
+            });
+            const mailOptions = {
+                from: "contact@deepworkco.in",
+                to: "sobhansaikuriti03@gmail.com",
+                subject: `New Contact Sent from website`,
+                html: `<h2>Business Type : ${businessType}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
+            };
+            transporter.sendMail(mailOptions, (error, response) => {
+                if (error) {
+                    console.log(error);
+                    res.status(400);
+                } else {
+                    console.log("Email Sent");
+                    res.send("success")
+                }
+            });
         }
+        connection.end();
     });
 })
 
@@ -90,34 +117,64 @@ app.post("/sendmail", function (req, res) {
 app.post("/sendmail-2", function (req, res) {
     // console.log(req.body);
     const { name, email, phone, subject } = req.body;
-    const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_SERVER,
-        port: process.env.SMTP_PORT,
-        secure: false,
-        auth: {
-            user,
-            pass
-        },
-        tls: {
-            rejectUnauthorized: false
-        },
-        // debug: true, // enable debugging
-        // logger: true // log information
+    const dateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+    const connection = mysql.createConnection({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME
     });
-    const mailOptions = {
-        from: "contact@deepworkco.in",
-        to: "sobhansaikuriti03@gmail.com",
-        subject: subject,
-        html: `<h2>Page : ${subject}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
-    };
-    transporter.sendMail(mailOptions, (error, response) => {
+    connection.connect(function (err) {
+        if (err) {
+            console.error('Error connecting to database: ' + err.stack);
+            return;
+        }
+        console.log('Connected to database as id ' + connection.threadId);
+    });
+
+    const category = subject.split(" - ")[0];
+
+    const sql = `INSERT INTO contact_form (name, email, mobile, category, date, time) 
+                VALUES (?, ?, ?, ?, ?, ?)`;
+    const values = [name, email, phone, category, dateTime.slice(0, 10), dateTime.slice(11, 19)];
+    connection.query(sql, values, function (error, results, fields) {
         if (error) {
-            console.log(error);
+            console.error('Error inserting data into database: ' + error.stack);
             res.status(400);
         } else {
-            console.log("Email Sent");
-            res.send("success")
+            console.log('Data inserted into database with id ' + results.insertId);
+            const transporter = nodemailer.createTransport({
+                host: process.env.SMTP_SERVER,
+                port: process.env.SMTP_PORT,
+                secure: false,
+                auth: {
+                    user,
+                    pass
+                },
+                tls: {
+                    rejectUnauthorized: false
+                },
+                // debug: true, // enable debugging
+                // logger: true // log information
+            });
+            const mailOptions = {
+                from: "contact@deepworkco.in",
+                to: "sobhansaikuriti03@gmail.com",
+                subject: subject,
+                html: `<h2>Page : ${subject}</h2><p>Name : ${name}</p><p>Email : ${email}</p><p>Mobile : ${phone}</p>`
+            };
+            transporter.sendMail(mailOptions, (error, response) => {
+                if (error) {
+                    console.log(error);
+                    res.status(400);
+                } else {
+                    console.log("Email Sent");
+                    res.send("success")
+                }
+            });
         }
+        connection.end();
     });
 })
 
