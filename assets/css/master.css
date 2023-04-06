@@ -408,7 +408,7 @@ img {
 
 .list-check li {
   font-size: 18px;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-bottom: 18px;
   color: var(--black-2);
   position: relative;
@@ -864,7 +864,7 @@ img {
 
 @media (max-width: 1199px) {
   .sec-title {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -1804,7 +1804,7 @@ img {
 }
 
 .header__area.sticky .main-menu ul li a {
-  color: var(--black-2);
+  color: var(--black-2) !important;
 }
 
 .header__area.sticky .main-menu ul li a:hover {
@@ -2648,7 +2648,8 @@ img {
 .hero__area p {
   font-size: 18px;
   max-width: 570px;
-  color: var(--gray-2);
+  /* color: var(--gray-2); */
+  color: var(--white);
   padding-bottom: 12px;
 }
 
@@ -2706,6 +2707,7 @@ img {
 .hero__content {
   position: relative;
   z-index: 1;
+  text-shadow: rgb(0, 0, 0) 1px 0px 0px, rgb(0, 0, 0) 0.540302px 0.841471px 0px, rgb(0, 0, 0) -0.416147px 0.909297px 0px, rgb(0, 0, 0) -0.989992px 0.14112px 0px, rgb(0, 0, 0) -0.653644px -0.756802px 0px, rgb(0, 0, 0) 0.283662px -0.958924px 0px, rgb(0, 0, 0) 0.96017px -0.279415px 0px;
 }
 
 .hero__sub-title {
@@ -2739,7 +2741,7 @@ img {
 
 @media (max-width: 767px) {
   .hero__title {
-    font-size: 32px;
+    font-size: 24px;
     padding-bottom: 20px;
   }
 }
@@ -2939,6 +2941,12 @@ img {
 @media (max-width: 1199px) {
   .feature__item-2 p {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .fixing-1 .about__left {
+    text-align: center;
   }
 }
 
@@ -5452,7 +5460,7 @@ img {
 
 .hire__title {
   font-family: var(--font-poppins);
-  font-size: 48px;
+  font-size: 36px;
   color: var(--white);
   /* max-width: 600px; */
   margin: 0 auto;
@@ -5462,27 +5470,27 @@ img {
 }
 
 .hire__title span {
-  font-size: 28px;
+  font-size: 20px;
   display: inline-block;
 }
 
 @media (max-width: 991px) {
   .hire__title {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .hire__title span {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 767px) {
   .hire__title {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .hire__title span {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
