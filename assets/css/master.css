@@ -2403,8 +2403,8 @@ img {
 }
 
 .offcanvas__top button:hover {
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--secondary);
+  border-color: var(--secondary);
 }
 
 .offcanvas__menu {
