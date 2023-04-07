@@ -430,13 +430,13 @@
                         </div>
                     </div>
                     <style scoped>
-                        .linefixes {
-                            white-space: nowrap;
-                        }
+                        @media screen and (min-width:390px) {
+                            .linefixes br {
+                                display: none;
+                            }
 
-                        @media screen and (min-width:768px) {
                             .linefixes {
-                                white-space: normal;
+                                white-space: nowrap;
                             }
                         }
                     </style>
@@ -448,7 +448,7 @@
                                 </div>
                                 <div class="service__btm-2">
                                     <ul>
-                                        <li class="linefixes">✅ Minimum 2 Directors and maximum 15</li>
+                                        <li class="linefixes">✅ Minimum 2 Directors and<br> maximum 15</li>
                                         <li>✅ Minimum 2 Shareholders</li>
                                         <li>✅ For directors, DIN is issued by MCA for each Director</li>
                                     </ul>
