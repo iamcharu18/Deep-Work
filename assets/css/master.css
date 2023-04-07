@@ -2547,7 +2547,7 @@ img {
 }
 
 .mean-container .mean-nav ul li a {
-  background-color: var(--black-2);
+  /* background-color: var(--black-2); */
   text-transform: capitalize;
   border-color: rgba(255, 255, 255, 0.1);
 }
@@ -7721,7 +7721,7 @@ button.accordion-button {
 .footer__location li a {
   display: block;
   font-size: 16px;
-  color: var(--gray-4);
+  color: var(--white);
   padding: 5px 0;
 }
 
@@ -7732,12 +7732,12 @@ button.accordion-button {
 .footer__location li span {
   display: block;
   font-size: 16px;
-  color: var(--gray-4);
+  color: var(--white);
   padding: 5px 0;
 }
 
 .footer__location li i {
-  color: var(--primary);
+  color: var(--white);
 }
 
 .widget__one img {
