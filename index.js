@@ -340,4 +340,12 @@ app.get("*", function (req, res) {
     });
 });
 
+// const options = {
+//     key: fs.readFileSync('./'),
+//     cert: fs.readFileSync('/path/to/certificate.pem')
+// }; 3
+
+// const server = https.createServer(options, app);
+// server.listen(443);
+
 module.exports = app;
