@@ -2335,7 +2335,7 @@ img {
   right: -400px;
   z-index: 99;
   padding: 40px 30px;
-  background: var(--black-2);
+  background: var(--primary);
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.5s;
