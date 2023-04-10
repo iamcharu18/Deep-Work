@@ -37,17 +37,19 @@
             </div>
             <div class="col-md-6 align-self-center">
                 <form class="p-3" id="startup-contact-form">
-                    <div class="form-group mb-3">
+                    <div class=" form-group mb-3">
                         <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" required>
+                        <input type="text" class="form-control" id="name" pattern="^[a-zA-Z ]+$" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="phone">Mobile:</label>
-                        <input type="tel" class="form-control" id="phone" required>
+                        <input type="tel" class="form-control" id="phone" pattern="[+]?[0-9]{0,3}[\s]?\d{5}[\s]?\d{5}"
+                            required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            id="email" required>
                     </div>
                     <input type="hidden" id="subject"
                         value="Private Limited Company Registration - New Form Submission">

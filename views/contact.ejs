@@ -64,13 +64,15 @@
                         <h2 class="contact__title">Get in touch</h2>
                         <form id="contact-form">
                             <div class="input-grp">
-                                <input type="text" id="name" placeholder="Your Name*" name="name" required>
+                                <input type="text" id="name" placeholder="Your Name*" pattern="^[a-zA-Z ]+$" name="name"
+                                    required>
                                 <input type="tel" id="phone" name="phone" placeholder="Mobile Number*"
                                     pattern="[+]?[0-9]{0,3}[\s]?\d{5}[\s]?\d{5}" required>
                             </div>
-                            <input type="email" id="email" name="email" placeholder="Email*" required>
-                            <input type="text" id="business-type" name="business-type" placeholder="Business Type*"
-                                required>
+                            <input type="email" id="email" name="email" placeholder="Email*"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                            <input type="text" id="business-type" name="business-type" pattern="^[a-zA-Z ]+$"
+                                placeholder="Business Type*" required>
                             <!-- <label for="category">Service you're looking for?</label>
                             <select name="category" id="category" required multiple>
                                 <option value="" disabled></option>
