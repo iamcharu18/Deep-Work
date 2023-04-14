@@ -223,7 +223,7 @@ app.get("/services/statutory-and-other-compliances", function (req, res) {
     });
 });
 
-app.get("/services/outsourcing", function (req, res) {
+app.get("/services/outsourcing-and-virtual-cfo-services", function (req, res) {
     res.render("services/7-outsourcing", {
         title: "Outsourcing",
     });

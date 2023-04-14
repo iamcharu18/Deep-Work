@@ -407,7 +407,7 @@ img {
   color: var(--black-2);
   position: relative;
   padding-left: 35px;
-  font-family: var(--font-poppins);
+  /* font-family: var(--font-poppins); */
 }
 
 @media (max-width: 991px) {
@@ -7339,7 +7339,7 @@ img {
   height: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -7357,6 +7357,7 @@ img {
 .contact__item .title {
   font-size: 18px;
   font-weight: 700;
+  display: inline;
   color: var(--black-2);
   padding-bottom: 10px;
 }
