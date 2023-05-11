@@ -327,17 +327,17 @@ app.get("/services/valuation-service", function (req, res) {
     });
 });
 
-app.get("/home-2", function (req, res) {
-    res.render("home.ejs", {
-        title: "Second Home",
-    });
-})
+// app.get("/home-2", function (req, res) {
+//     res.render("home.ejs", {
+//         title: "Second Home",
+//     });
+// })
 
-app.get("/home-3", function (req, res) {
-    res.render("home-2.ejs", {
-        title: "Third Home",
-    });
-})
+// app.get("/home-3", function (req, res) {
+//     res.render("home-2.ejs", {
+//         title: "Third Home",
+//     });
+// })
 
 app.get("*", function (req, res) {
     // console.log(req.path);
