@@ -1,0 +1,28 @@
+<%- include('partials/header',{title: "Admin Dashboard" }); -%>
+    <%- include('editor',{title: "Update" }); -%>
+        <p class="d-none" id="blogId">
+            <%= blog.id %>
+        </p>
+        <button class="btn btn-warning col-3 me-3" id="draftUpdateBtn" type="submit" onclick="saveDraft()">Update and
+            save to draft</button>
+        <button class="btn btn-primary col-3" id="submitUpdateBtn" type="submit">Update Post</button>
+        </div>
+        </div>
+        </form>
+        </div>
+
+        <!-- Include stylesheet -->
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+        <style scoped>
+            #editor-container {
+                height: 40vh;
+            }
+        </style>
+
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+        <script src="/assets/js/admin/update_blog.js"></script>
+
+        </div>
+        <%- include('partials/footer'); -%>

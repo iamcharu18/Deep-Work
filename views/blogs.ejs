@@ -1,0 +1,148 @@
+<%- include('partials/header'); -%>
+
+    <!-- Breadcrumb area start -->
+    <section class="breadcrumb__area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="breadcrumb__content">
+                        <h1 class="breadcrumb__title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                            Recent
+                            Blogs</h1>
+                        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.4s"><a href="/">Home</a>
+                            <span>Recent Blog</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="/assets/imgs/hero/overlay.png" alt="overlay" class="overlay">
+    </section>
+    <!-- Breadcrumb area end -->
+
+
+    <section class="blog__area-3 pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="blog__inner-3">
+                        <div class="blog__items-3">
+                            <div class="row">
+                                <% blogs.forEach(blog=> { %>
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                        <div class="blog__item mb-4 shadow wow animate__animated animate__fadeInUp"
+                                            data-wow-delay="0.2s">
+                                            <a href="/blog-details/<%= blog.urlSlug %>"><img src="<%= blog.bannerImg %>"
+                                                    alt="Blog Image"></a>
+                                            <div class="blog__content">
+                                                <div class="date">
+                                                    <%= blog.updatedAt.toDateString() %>
+                                                </div>
+                                                <a href="/blog/<%= blog.urlSlug %>">
+                                                    <h2 class="blog__title">
+                                                        <%= blog.title %>
+                                                    </h2>
+                                                </a>
+                                                <p>
+                                                    <% const words=blog.description.split(' '); %>
+                                                    <% const limitedWords = words.slice(0, 20); %>
+                                                    <%= limitedWords.join(' ') %>
+                                                    <% if (words.length > 20) { %>
+                                                        ...
+                                                    <% } %>
+                                                </p>
+                                                <a href="/blog/<%= blog.urlSlug %>" class="link">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }); %>
+                            </div>
+
+                            <div class="blog__pagination">
+                                <ul class="wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+                                    <% for (let i=1; i <=totalPages; i++) { %>
+                                        <% if (i==currentPage) { %>
+                                            <li class="active">
+                                                <%= i %>
+                                            </li>
+                                            <% } else { %>
+                                                <li>
+                                                    <a href="/blogs?page=<%= i %>">
+                                                        <%= i %>
+                                                    </a>
+                                                </li>
+                                                <% } %>
+                                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="blog__sidebar">
+                            <div class="sidebar__widgets">
+                                <div class="widget__search wow animate__animated animate__fadeInUp"
+                                    data-wow-delay="0.2s">
+                                    <form action="#">
+                                        <input type="text" name="s" placeholder="Search Keywords">
+                                        <input type="submit" class="submit" value="Search">
+                                    </form>
+                                </div>
+                                <div class="widget__category wow animate__animated animate__fadeInUp"
+                                    data-wow-delay="0.4s">
+                                    <h2 class="widget__title">Categories</h2>
+                                    <ul>
+                                        <% categories.forEach(category=> { %>
+                                            <li>
+                                                <a href="/blogs?category=<%= category.id %>">
+                                                    <%= category.categoryName %>
+                                                        <span>(<%= category.blogCount %>)</span>
+                                                </a>
+                                            </li>
+                                            <% }); %>
+                                    </ul>
+                                </div>
+
+
+
+                                <div class="widget__rposts wow animate__animated animate__fadeInUp"
+                                    data-wow-delay="0.1s">
+                                    <h2 class="widget__title">Recent Posts</h2>
+                                    <div class="recent-items">
+                                        <% recentPosts.slice(0, 3).forEach(blog=> { %>
+                                            <div class="recent-item">
+                                                <div class="img">
+                                                    <a href="#"><img src="<%= blog.bannerImg %>" alt="Image"></a>
+                                                </div>
+                                                <div class="info">
+                                                    <a href="#">
+                                                        <h2 class="title">
+                                                            <%= blog.title %>
+                                                        </h2>
+                                                    </a>
+                                                    <p>
+                                                        <%= blog.updatedAt.toDateString() %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <% }); %>
+                                    </div>
+                                </div>
+
+                                <div class="widget__tags wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                                    <h2 class="widget__title">Popular Tags</h2>
+                                    <ul>
+                                      <% popularTags.forEach(function(tag) { %>
+                                        <li><a href="/blogs?tag=<%= tag.tagName %>"><%= tag.tagName %></a></li>
+                                      <% }); %>
+                                    </ul>
+                                  </div>
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <%- include('partials/footer'); -%>

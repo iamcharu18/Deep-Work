@@ -1,0 +1,91 @@
+<%- include('../partials/header'); -%>
+
+    <!-- Breadcrumb area start -->
+    <section class="breadcrumb__area">
+        <div class="container-login">
+            <form id="loginForm" class="mt-4">
+                <h3 class="text-center">Admin Login</h3>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <div id="errorMessage" class="text-danger"></div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- Breadcrumb area end -->
+    <style scoped>
+        .container-login {
+            max-width: 575px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        #errorMessage {
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        // Login Form
+
+        let usernameEl = document.getElementById("username");
+        let passwordEl = document.getElementById("password");
+        let errMsgEl = document.getElementById("errorMessage");
+
+        let loginform = document.getElementById("loginForm");
+
+        let formData = {
+            username: "",
+            password: ""
+        };
+
+        usernameEl.addEventListener("change", function (event) {
+            formData.username = event.target.value;
+        });
+
+        passwordEl.addEventListener("change", function (event) {
+            formData.password = event.target.value;
+            errMsgEl.textContent = '';
+        });
+
+        async function submitFormData(formData) {
+            let options = {
+                method: "POST",
+                body: JSON.stringify({ username: formData.username, password: formData.password }),
+                headers: { "Content-Type": "application/json" }
+            };
+
+            let url = "/admin/login";
+
+            try {
+                const response = await fetch(url, options);
+                const { status } = response;
+
+                if (status === 401) {
+                    errMsgEl.textContent = 'Incorrect password. Please try again.';
+                    document.getElementById('password').value = '';
+                }
+
+                if (status === 200) {
+                    window.location.href = '/admin/dashboard';
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+
+        loginform.addEventListener("submit", function (event) {
+            event.preventDefault();
+            submitFormData(formData);
+        });
+    </script>
+    <%- include('../partials/footer'); -%>

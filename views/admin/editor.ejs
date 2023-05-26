@@ -1,0 +1,167 @@
+<div class="col py-3">
+    <div id="form-container" class="container">
+        <h1>
+            <%= title %> Blog
+        </h1>
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="title">Title</label>
+                        <input class="form-control" name="title" id="title" type="text" value="<%= blog.title %>"
+                            required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="metaTitle">Meta Title</label>
+                        <input class="form-control d-inline" name="metaTitle" id="metaTitle" type="text"
+                            value="<%= blog.metaTitle %>" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="urlSlug">URL Slug</label>
+                        <input class="form-control" name="urlSlug" id="urlSlug" type="text" value="<%= blog.urlSlug %>"
+                            required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="banner">Banner Image</label>
+                        <input class="form-control" name="banner" id="banner" type="file" accept="image/*">
+                        <!-- <%= blog.bannerImg !== undefined ? blog.bannerImg : '#' %> -->
+                        <img id="bannerPreImg" height="100" width="100"
+                            src="<%= blog.bannerImg !== undefined ? blog.bannerImg : '#' %>" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" rows="3" cols="50" name="description" required id="description"
+                            type="text"><%= blog.description %></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="metaDescription">Meta Description</label>
+                        <textarea class="form-control" rows="3" cols="50" name="metaDescription" required
+                            id="metaDescription" type="text"><%= blog.metaDescription %></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group mb-3">
+                        <label for="tags">Tags</label>
+                        <select class="form-select" name="tags" id="tags" multiple multiselect-search="true"
+                            multiselect-select-all="true" required>
+                            <% tags.forEach((tag)=> { %>
+                                <option value="<%= tag.id %>" <% if (blogTagIds?.includes(tag.id)) { %>selected<% } %>>
+                                        <%= tag.tagName %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="metaKeywords">Meta Keywords</label>
+                        <input class="form-control" name="metaKeywords" id="metaKeywords" type="text"
+                            value="<%= blog.metaKeywords %>" required>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="category">Category</label>
+                        <select class="form-select" name="category" id="category" required filter="true">
+                            <option value="">Select Category</option>
+                            <% categories.forEach((category)=> { %>
+                                <option value="<%= category.id %>" <% if (blog.categoryId==category.id.toString()) { %>
+                                    selected
+                                    <% } %>>
+                                        <%= category.categoryName %>
+                                </option>
+                                <% }) %>
+                                    <option value="add-new-category" style="color: red;">Add New Category</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4" id="new-category">
+                    <div class="form-group mb-3" style="display: none;">
+                        <label for="new-category-name">New Category Name</label>
+                        <input type="text" name="new-category-name" id="new-category-name" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="content">Content</label>
+                    <input name="content" id="content" value="<%= blog.content %>" type="hidden">
+                    <div id="editor-container">
+
+                    </div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="verifyCheck">
+                    <label class="form-check-label" for="verifyCheck">Verify</label>
+                </div>
+                <script src="/assets/js/multiselect-dropdown.js"></script>
+                <script>
+                    const newCategoryNameInput = document.querySelector('#new-category-name');
+                    const categorySelect = document.querySelector('#category');
+                    const urlSlugSelect = document.querySelector('#urlSlug');
+
+                    urlSlugSelect.addEventListener('blur', async () => {
+                        const newSlug = urlSlugSelect.value.trim();
+                        if (newSlug !== '') {
+                            try {
+                                const response = await fetch(`check_urlslug/${newSlug}`);
+                                const data = await response.json();
+                                if (data.exists) {
+                                    urlSlugSelect.setCustomValidity('URL SLUG already taken');
+                                    urlSlugSelect.reportValidity(); // trigger validation error
+                                } else {
+                                    // Clear error message
+                                    urlSlugSelect.setCustomValidity('');
+                                }
+                            } catch (error) {
+                                console.error(error);
+                            }
+                        }
+                        else {
+                            urlSlugSelect.setCustomValidity('URL Slug Required');
+                            urlSlugSelect.reportValidity(); // trigger validation error
+                        }
+                    })
+
+                    // Send request to check if new category name is unique
+                    newCategoryNameInput.addEventListener('blur', async () => {
+                        const newCategoryName = newCategoryNameInput.value.trim();
+                        if (newCategoryName !== '') {
+                            try {
+                                const response = await fetch(`check_category/${newCategoryName}`);
+                                const data = await response.json();
+                                if (data.exists) {
+                                    newCategoryNameInput.setCustomValidity('Category already exists');
+                                    newCategoryNameInput.reportValidity(); // trigger validation error
+                                } else {
+                                    newCategoryNameInput.setCustomValidity('');
+                                }
+                            } catch (error) {
+                                console.error(error);
+                            }
+                        }
+                        else {
+                            newCategoryNameInput.setCustomValidity('Category Required');
+                            newCategoryNameInput.reportValidity(); // trigger validation error
+                        }
+                    });
+
+
+                    // Hide new category name input when category select value changes
+                    categorySelect.addEventListener('change', () => {
+                        const option = categorySelect.options[categorySelect.selectedIndex];
+                        if (option.value === 'add-new-category') {
+                            newCategoryNameInput.parentNode.style.display = 'block';
+                        } else {
+                            newCategoryNameInput.parentNode.style.display = 'none';
+                        }
+                    });
+                </script>

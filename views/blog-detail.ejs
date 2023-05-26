@@ -1,0 +1,108 @@
+﻿<%- include('partials/header'); -%>
+  <section class="breadcrumb__area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12">
+          <div class="breadcrumb__content">
+            <h1 class="breadcrumb__title">
+              <%= blog.title %>
+            </h1>
+            <p><a href="/">Home</a> <a href="/blogs">Blogs</a><span>Blog</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <img src="/assets/imgs/hero/overlay.png" alt="overlay" class="overlay">
+  </section>
+
+  <section class="blog__detail-area pt-130">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12">
+          <div class="blog__inner-4">
+            <div class="blog__items-3">
+              <article class="blog__item-3">
+                <a><img src="<%= blog.bannerImg %>" alt="Blog Image"></a>
+                <div class="blog__content-3">
+                  <div class="blog__meta plr">
+                    <div class="date">
+                      <span><i class="fa-solid fa-calendar-days"></i>
+                        <%= blog.createdAt.getDate() %>
+                      </span>
+                      <%= blog.createdAt.toLocaleString('default', { month: 'short' , year: 'numeric' }) %>
+                    </div>
+                  </div>
+                  <h2 class="blog__title-3 plr">
+                    <%= blog.title %>
+                  </h2>
+
+                  <div class="blog__detail">
+                    <div class="blog__detail-content">
+                      <p>
+                        <%= blog.description %>
+                      </p>
+                      <%- blog.content %>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <div class="blog__prev-next">
+                <% if (previousBlog) { %>
+                  <div class="blog__prev">
+                    <a href="/blogs/<%= previousBlog.urlSlug %>">
+                      <img src="<%= nextBlog.bannerImg %>" alt="Image">
+                      <p><span>Previous Post</span>
+                        <%= previousBlog.title %>
+                      </p>
+                    </a>
+                  </div>
+                  <% } %>
+                    <% if (nextBlog) { %>
+                      <div class="blog__next">
+                        <a href="/blogs/<%= nextBlog.urlSlug %>">
+                          <p><span>Next Post</span>
+                            <%= nextBlog.title %>
+                          </p>
+                          <img src="<%= nextBlog.bannerImg %>" alt="Image">
+                        </a>
+                      </div>
+                      <% } %>
+              </div>
+
+
+              <div class="blog__tag-share">
+                <div class="blog__tags">
+                  <p>tags:</p>
+                  <ul> |
+                    <% blog.Tags?.forEach(function(tag) { %>
+                      <li><a href="/blogs?tag=<%= tag.tagName %>">
+                          <%= tag.tagName %> |
+                        </a></li>
+                      <% }); %>
+                  </ul>
+                </div>
+                <!-- <div class="blog__share">
+                  <p><i class="fa-solid fa-share-nodes"></i> Share</p>
+                  <ul class="header__social-2 share">
+                    <li><a target="_blank"
+                        href="https://www.facebook.com/sharer/sharer.php?u=<%= encodeURIComponent(currentUrl) %>"><i
+                          class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a target="_blank"
+                        href="https://twitter.com/intent/tweet?url=<%= encodeURIComponent(currentUrl) %>&text=<%= encodeURIComponent(blog.title) %>"><i
+                          class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                  </ul>
+                </div> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer'); -%>

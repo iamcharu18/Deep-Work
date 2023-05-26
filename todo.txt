@@ -1,0 +1,6 @@
+Handling tags
+
+Routes for individual blog
+Handling stats
+
+can add comments functionality
